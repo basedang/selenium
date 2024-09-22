@@ -1,0 +1,91 @@
+from selenium.webdriver import Chrome
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+import time
+
+options = Chrome()
+
+options.get("http://127.0.0.1:8234/mgr/sign.html")
+inp = options.find_element(By.ID,"username")
+time.sleep(1)
+inp.send_keys('byhy')
+
+inp = options.find_element(By.ID,"password")
+time.sleep(1)
+inp.send_keys('88888888')
+
+time.sleep(3)
+bnt = options.find_element(By.CLASS_NAME,"col-xs-12")
+bnt.click()
+
+
+time.sleep(3)
+bnt2 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-md"]')
+#bnt2 = options.find_element(By.xpath,"/html/body/div/div/section[2]/div[1]/button")
+bnt2.click()
+
+
+time.sleep(2)
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('南京中医院1')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('2551867851')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('江苏省-南京市-秦淮区-汉中路-501')
+
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+time.sleep(2)
+
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('南京中医院2')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('2551867852')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('江苏省-南京市-秦淮区-汉中路-502')
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+
+time.sleep(2)
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('南京中医院3')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('2551867853')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('江苏省-南京市-秦淮区-汉中路-503')
+
+
+time.sleep(1)
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+time.sleep(3)
+
+bnt2 = options.find_element(By.CSS_SELECTOR,'[class="fa fa-plus"]').click()
+time.sleep(1)
+bnt2 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-md"]').click()
+
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('青霉素盒装1')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('YP-32342341')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('青霉素注射液，每支15ml，20支装')
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+time.sleep(2)
+
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('青霉素盒装2')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('YP-32342342')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('青霉素注射液，每支15ml，30支装')
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+time.sleep(2)
+
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('青霉素盒装3')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[1].send_keys('YP-32342343')
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[2].send_keys('青霉素注射液，每支15ml，40支装')
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+
+time.sleep(3)
+bnt2 = options.find_element(By.CSS_SELECTOR,'[class="fa fa-paperclip"]').click()
+time.sleep(1)
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-md"]').click()
+
+inp3 = options.find_elements(By.CLASS_NAME,"form-control")[0].send_keys('fist1')
+time.sleep(1)
+
+#/html/body/div[1]/div/section[2]/div[1]/div[1]/div[2]/select/option[2]
+#.select_by_visible_text('南京中医院2')
+select =options.find_element(By.XPATH,"/html/body/div[1]/div/section[2]/div[1]/div[1]/div[2]/select/option[2]").click()
+time.sleep(2)
+
+select =options.find_element(By.XPATH,"/html/body/div[1]/div/section[2]/div[1]/div[1]/div[3]/select/option[2]").click()
+time.sleep(1)
+
+inp3 = options.find_element(By.CSS_SELECTOR,'[type="number"]').send_keys('100')
+bnt3 = options.find_element(By.CSS_SELECTOR,'[class="btn btn-green btn-outlined btn-xs"]').click()
+
+
